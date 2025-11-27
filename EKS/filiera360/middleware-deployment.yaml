@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: middleware
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: middleware
+  template:
+    metadata:
+      labels:
+        app: middleware
+    spec:
+      containers:
+      - name: frontend
+        image: 000000000000.dkr.ecr.eu-central-1.localhost.localstack.cloud:4566/middleware:latest
+        ports:
+        - containerPort: 3000

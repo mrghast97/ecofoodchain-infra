@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      containers:
+      - name: db
+        image: 000000000000.dkr.ecr.eu-central-1.localhost.localstack.cloud:4566/db:latest
+        ports:
+        - containerPort: 5432
