@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: metaverso
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: metaverso
+  template:
+    metadata:
+      labels:
+        app: metaverso
+    spec:
+      containers:
+        - name: metaverso
+          image: 000000000000.dkr.ecr.eu-central-1.localhost.localstack.cloud:4566/metaverso
+          ports:
+            - containerPort: 80

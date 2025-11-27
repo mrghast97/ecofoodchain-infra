@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: buildform4
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: buildform4
+  template:
+    metadata:
+      labels:
+        app: buildform4
+    spec:
+      containers:
+        - name: buildform4
+          image: 000000000000.dkr.ecr.eu-central-1.localhost.localstack.cloud:4566/buildform4:latest
+          ports:
+            - containerPort: 80

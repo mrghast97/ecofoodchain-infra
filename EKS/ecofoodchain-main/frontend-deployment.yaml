@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecofoodchain-main-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ecofoodchain-main-frontend
+  template:
+    metadata:
+      labels:
+        app: ecofoodchain-main-frontend
+    spec:
+      containers:
+      - name: ecofoodchain-main-frontend
+        image: 000000000000.dkr.ecr.eu-central-1.localhost.localstack.cloud:4566/ecofoodchain-main-frontend
+        ports:
+        - containerPort: 5713

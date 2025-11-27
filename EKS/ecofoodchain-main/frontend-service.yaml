@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecofoodchain-main-frontend
+spec:
+  selector:
+    app: ecofoodchain-main-frontend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5713
+  type: ClusterIP
