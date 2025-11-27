@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  localstack:
+    image: localstack/localstack-pro:latest
+    ports:
+      - "4566:4566"             # Porta principale LocalStack
+      - "4510-4559:4510-4559"   # Porte per servizi interni
+    environment:
+      - SERVICES=eks,ecr,s3,secretsmanager,iam,sts,cloudformation,ec2
+      - DEBUG=1
+      - LOCALSTACK_AUTH_TOKEN=ls-JiJIJaHo-roDo-6501-meYE-9480XOzib3fb
+    volumes:
+      - ./localstack:/var/lib/localstack
+      - /var/run/docker.sock:/var/run/docker.sock
