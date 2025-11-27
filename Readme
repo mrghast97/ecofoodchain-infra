@@ -38,6 +38,3 @@ Port forwarding per buildform4:
 kubectl port-forward svc/ecofoodchain-main-frontend 5713:80
 http://localhost:8081
 
-Mi creo l’ingress controller:
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.9.1/deploy/static/provider/cloud/deploy.yaml
-
